@@ -1,0 +1,21 @@
+---
+  apiVersion: v1
+  kind: ConfigMap
+  metadata:
+    name: kube-monkey-config-map
+    namespace: kube-system
+  data:
+    config.toml: |
+      [kubemonkey]
+      #dry_run = true
+      run_hour = 16
+      start_hour = 17
+      end_hour = 22
+      blacklisted_namespaces = ["kube-system"]
+      whitelisted_namespaces = ["test-kill-ns"]
+      time_zone = "Asia/Kolkata"
+      [debug]
+      enabled= true
+      schedule_immediate_kill= true
+      [kubernetes]
+      host="https://192.168.99.100:8443"
