@@ -24,7 +24,7 @@ $ kubectl create -f configmap.yaml
 $ kubectl create -f deployment.yaml
 ```
 
-Let's verfiy does `kube-monkey` started terminiating pods from victim deployments ?
+Let's verfiy does `kube-monkey` started terminating pods from victim deployments ?
 
 ```sh
 kubectl logs -f deployment.apps/kube-monkey --namespace=kube-system
